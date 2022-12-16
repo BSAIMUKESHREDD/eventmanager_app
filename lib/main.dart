@@ -20,10 +20,12 @@ class _MyApp extends State<MyApp>{
     // TODO: implement build
     return MaterialApp(
       home: Scaffold(
-    appBar: AppBar(title: Text('EVENT MANAGER'),),
-        body: ListView.builder(
+    appBar: AppBar(title: Text('EVENT SCHEDULER'),),
+        body:
+        ListView.separated(
+            padding: const EdgeInsets.all(10),
             itemCount: _list.length,
-            itemBuilder: ((context,index)=> _list[index])),
+            itemBuilder: ((context,index)=> _list[index]), separatorBuilder: (BuildContext context, int index) =>const Divider(),),
 
         floatingActionButton: Builder(
           builder: (context) {
@@ -34,13 +36,19 @@ class _MyApp extends State<MyApp>{
                 String newText = await Navigator.of(context).push(MaterialPageRoute(builder: (context)=> NewEventsScreen()));
                // print(newText);
               setState(() {
+                /*return Container(
+                  height: 50,
+                  child: Center(child: Text(newText),),
+                );*/
                 _list.add(Text(newText));
               });
                 },
               child: Icon(Icons.add_circle),
             );
           }
-        ),
+
+    ),
+
 
       ),
     );
