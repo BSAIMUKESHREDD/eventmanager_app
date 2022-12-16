@@ -20,6 +20,7 @@ class _MyApp extends State<MyApp>{
     // TODO: implement build
     return MaterialApp(
       home: Scaffold(
+
     appBar: AppBar(title: Text('EVENT SCHEDULER'),),
         body:
         ListView.separated(

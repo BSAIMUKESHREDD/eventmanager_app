@@ -20,6 +20,11 @@ class _NewEventScreen  extends State<NewEventsScreen>{
       body: Column(
         children: [
           TextField(
+            decoration: InputDecoration(
+              prefixIcon: Icon(Icons.event),
+              border: OutlineInputBorder(),
+              hintText: 'Enter the event here',
+            ),
             controller: _textEditingController,
           ),
           Builder(
@@ -29,11 +34,13 @@ class _NewEventScreen  extends State<NewEventsScreen>{
                 //print(newEventText);
                 Navigator.of(context).pop(newEventText);
 
-              }, child: Text("Add"));
+              },
+                  child: Text("Add",style: TextStyle(backgroundColor: Colors.purple),));
             }
           ),
         ],
       ),
+
     );
   }
 
