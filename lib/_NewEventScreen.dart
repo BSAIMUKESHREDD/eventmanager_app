@@ -28,6 +28,7 @@ class _NewEventScreen  extends State<NewEventsScreen>{
                 String newEventText = _textEditingController.text;
                 //print(newEventText);
                 Navigator.of(context).pop(newEventText);
+
               }, child: Text("Add"));
             }
           ),
